@@ -36,6 +36,7 @@ export const MovieDetails = ({ movieData }) => {
         <b>Rating: </b>
         {movieData.Rating}
       </div>
+      <img src={movieData.Poster} />
     </div>
   );
 };
