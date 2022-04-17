@@ -4,9 +4,9 @@
 // import { GetMoviesByName } from "./components/GetMoviesByName";
 import { MovieDetails } from "./components/MovieDetails";
 import { movieData } from "./components/movieData";
+import { useState, useEffect } from "react";
 
 function App() {
-  console.log(movieData);
   return (
     <div>
       {/* <GetMovieId /> */}
