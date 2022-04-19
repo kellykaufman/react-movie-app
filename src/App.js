@@ -6,12 +6,13 @@ import { MovieDetails } from "./components/MovieDetails";
 import { movieData } from "./components/movieData";
 import React from "react";
 import { getMoviesByName } from "./utils";
+import MovieList from "./components/MovieList";
 // import { useState, useEffect } from "react";
 
 function App() {
   // const [searchTerm, setSearchTerm] = useState("Zola");
   // const [isLoading, setIsLoading] = useState(false);
-  const [movie, setMovie] = React.useState("");
+  const [movieList, setMovieList] = React.useState([]);
   // const [error, setError] = useState(null);
   React.useEffect(() => {
     const getMoviesByName = async (name) => {
@@ -23,7 +24,7 @@ function App() {
       // return an array of movies with a matching title from OMDb API
       const data = await response.json();
       console.log(data);
-      setMovie(data);
+      setMovieList(data.Search);
     };
     getMoviesByName("batman");
   }, []);
@@ -32,7 +33,9 @@ function App() {
     <div>
       {/* <GetMovieId /> */}
       {/* <GetMoviesByName /> */}
-      <MovieDetails movieData={movieData} movie={movie} />
+      {/* <MovieDetails movieData={movieData} movieList={movieList} /> */}
+
+      <MovieList movieList={movieList} />
     </div>
   );
 }
