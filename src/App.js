@@ -7,6 +7,7 @@ import { movieData } from "./components/movieData";
 import React from "react";
 import { getMoviesByName } from "./utils";
 import MovieList from "./components/MovieList";
+import SearchForm from "./components/SearchForm";
 // import { useState, useEffect } from "react";
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
       {/* <MovieDetails movieData={movieData} movieList={movieList} /> */}
 
       <MovieList movieList={movieList} />
+      <SearchForm />
     </div>
   );
 }
