@@ -1,9 +1,12 @@
 import React from "react";
 
-export const MovieDetails = ({ movieData }) => {
-  console.log(movieData);
+export const MovieDetails = ({ movieData, movie }) => {
+  console.log("This is: ", movie.Search);
   return (
     <div>
+      {movie.Search.map((data, index) => (
+        <div>hello</div>
+      ))}
       <div className="Poster">
         <b>Poster: </b>
         {movieData.Poster}
