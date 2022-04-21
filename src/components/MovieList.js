@@ -1,7 +1,7 @@
 import React from "react";
 import MovieCard from "./MovieCard";
 
-function movieList(props) {
+function MovieList(props) {
   console.log(props.movieList);
   return (
     <div className="movie-list">
@@ -12,4 +12,4 @@ function movieList(props) {
   );
 }
 
-export default movieList;
+export default MovieList;

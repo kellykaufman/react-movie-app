@@ -14,6 +14,22 @@ export default function SearchForm() {
   return (
     <>
       <form onSubmit={handleSubmit}></form>
+      <div className="Form-InputWrapper">
+        <label className="Label" htmlfor="Movie Name">
+          <b>Movie Name:</b>{" "}
+        </label>
+        <input
+          className="Input"
+          name="Movie Name"
+          type="text"
+          value={searchTitle}
+          onChange={(event) => setSearchTitle(event.target.value)}
+        />
+      </div>
+      <button type="submit" className="Button">
+        submit
+      </button>
+      <form />
     </>
   );
 }

@@ -1,5 +1,3 @@
-// import logo from "./logo.svg";
-// import "./App.scss";
 // import {GetMovieId from} "./components/GetMoviesById";
 import { GetMoviesByName } from "./utils";
 import { MovieDetails } from "./components/MovieDetails";
@@ -8,12 +6,14 @@ import React from "react";
 import { getMoviesByName } from "./utils";
 import MovieList from "./components/MovieList";
 import SearchForm from "./components/SearchForm";
-// import { useState, useEffect } from "react";
+import SearchBar from "./components/SearchBar";
+import { useState, useEffect } from "react";
 
 function App() {
-  // const [searchTerm, setSearchTerm] = useState("Zola");
   // const [isLoading, setIsLoading] = useState(false);
-  const [movieList, setMovieList] = React.useState([]);
+  const [movieList, setMovieList] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("Zola");
+
   // const [error, setError] = useState(null);
   React.useEffect(() => {
     const getMoviesByName = async (name) => {
@@ -27,7 +27,7 @@ function App() {
       console.log(data);
       setMovieList(data.Search);
     };
-    getMoviesByName("batman");
+    getMoviesByName(searchTerm);
   }, []);
 
   return (
@@ -35,7 +35,11 @@ function App() {
       {/* <GetMovieId /> */}
       {/* <GetMoviesByName /> */}
       {/* <MovieDetails movieData={movieData} movieList={movieList} /> */}
-
+      <SearchBar
+        searchTerm={searchTerm}
+        setSearchTerm={setSearchTerm}
+        setMovieList={setMovieList}
+      />
       <MovieList movieList={movieList} />
       <SearchForm />
     </div>
