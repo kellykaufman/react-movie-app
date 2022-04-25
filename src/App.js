@@ -9,6 +9,7 @@ import SearchForm from "./components/SearchForm";
 import SearchBar from "./components/SearchBar";
 import { useState, useEffect } from "react";
 import MovieCard from "./components/MovieCard";
+import "./App.css";
 
 function App() {
   // const [isLoading, setIsLoading] = useState(false);
