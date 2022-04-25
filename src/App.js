@@ -8,6 +8,9 @@ import MovieList from "./components/MovieList";
 import SearchForm from "./components/SearchForm";
 import SearchBar from "./components/SearchBar";
 import { useState, useEffect } from "react";
+import Modal from "./components/Modal";
+import MovieCard from "./components/MovieCard";
+import Modal from "./components/Modal";
 
 function App() {
   // const [isLoading, setIsLoading] = useState(false);
@@ -40,8 +43,10 @@ function App() {
         setSearchTerm={setSearchTerm}
         setMovieList={setMovieList}
       />
+      <MovieCard />
       <MovieList movieList={movieList} />
       <SearchForm />
+      <Modal isModelOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
     </div>
   );
 }

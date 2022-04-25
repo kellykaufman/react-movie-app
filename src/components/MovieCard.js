@@ -1,8 +1,9 @@
 export default function MovieCard(props) {
   console.log(props.movie);
+
   return (
     <div className="movie-card">
-      {props.movie.Title}
+      <div>{props.movie.Title}</div>
       <div>{props.movie.Year}</div>
       <div>{props.movie.Rated}</div>
       <div>{props.movie.Released}</div>
