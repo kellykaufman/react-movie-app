@@ -8,17 +8,14 @@ import MovieList from "./components/MovieList";
 import SearchForm from "./components/SearchForm";
 import SearchBar from "./components/SearchBar";
 import { useState, useEffect } from "react";
-import Modal from "./components/Modal";
 import MovieCard from "./components/MovieCard";
-import Modal from "./components/Modal";
 
 function App() {
   // const [isLoading, setIsLoading] = useState(false);
   const [movieList, setMovieList] = useState([]);
   const [searchTerm, setSearchTerm] = useState("Zola");
-
   // const [error, setError] = useState(null);
-  React.useEffect(() => {
+  useEffect(() => {
     const getMoviesByName = async (name) => {
       let apiKey = "8e16e290";
       // accessing the API
@@ -43,10 +40,9 @@ function App() {
         setSearchTerm={setSearchTerm}
         setMovieList={setMovieList}
       />
-      <MovieCard />
+      {/* <MovieCard /> */}
       <MovieList movieList={movieList} />
       <SearchForm />
-      <Modal isModelOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
     </div>
   );
 }

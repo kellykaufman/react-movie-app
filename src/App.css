@@ -1,3 +1,10 @@
+.movie-modal{
+  position:fixed;
+  height: 500px;
+  width: 500px;
+
+};
+
 .PosterUrl{
 
 }

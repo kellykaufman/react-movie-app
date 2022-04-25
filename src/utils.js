@@ -9,7 +9,7 @@ export const getMoviesByName = async (name) => {
   const data = await response.json();
   console.log(data);
 };
-getMoviesByName();
+getMoviesByName("Jacob's Ladder");
 // Declare variable for the search input and create a function to get the movie details
 export const getMoviesDetailsById = async (id) => {
   let apiKey = "";
@@ -21,4 +21,4 @@ export const getMoviesDetailsById = async (id) => {
   const data = await response.json();
   console.log(data);
 };
-getMoviesDetailsById();
+// getMoviesDetailsById();
