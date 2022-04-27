@@ -25,7 +25,7 @@ function App() {
       const response = await fetch(url);
       // return an array of movies with a matching title from OMDb API
       const data = await response.json();
-      console.log(data);
+      console.log("This is data: ", data);
       setMovieList(data.Search);
     };
     getMoviesByName(searchTerm);

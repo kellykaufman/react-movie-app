@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { Modal } from "./Modal";
+import { getMoviesDetailsById } from "../utils";
 
 export default function MovieCard(props) {
-  console.log(props.movie);
   const [isModalOpen, setIsModalOpen] = useState(false);
-
+  const [detailsInModal, setDetailsInModal] = useState({});
   return (
     <div className="movie-card">
       <div>{props.movie.Title}</div>
@@ -25,12 +25,21 @@ export default function MovieCard(props) {
       <div>{props.movie.imdbRating}</div>
       <div>{props.movie.imdbVotes}</div>
       <div>{props.movie.imdbID}</div>
-      <img src={props.movie.Poster} onClick={() => setIsModalOpen(true)} />
+      <img
+        alt="Movie Poster"
+        src={props.movie.Poster}
+        onClick={() => {
+          setIsModalOpen(true);
+          getMoviesDetailsById(props.movie.imdbID).then((result) =>
+            setDetailsInModal(result)
+          );
+        }}
+      />
       {isModalOpen && (
         <Modal
-          isModelOpen={isModalOpen}
+          isModalOpen={isModalOpen}
           setIsModalOpen={setIsModalOpen}
-          movieModal={props.movie}
+          detailsInModal={detailsInModal}
         />
       )}
     </div>
