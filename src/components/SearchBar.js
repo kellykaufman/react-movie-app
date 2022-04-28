@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Button } from "../styles/Button";
 
 function SearchBar({ searchTerm, setSearchTerm, setMovieList }) {
   const getMoviesByName = async (name) => {
@@ -30,7 +31,7 @@ function SearchBar({ searchTerm, setSearchTerm, setMovieList }) {
           onChange={(e) => setSearchTerm(e.target.value)}
         />
 
-        <button type="submit">Search</button>
+        <Button type="submit">Search</Button>
       </form>
     </>
   );
